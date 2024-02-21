@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches
+*.cache
+.cache/
+
+# Virtual environment
+venv/
+env/
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Media and static files
+media/
+static/
+
+# Secret keys
+*.secret
+
+# Environment variables
+.env
+
+# IDE files
+.idea/
+.vscode/
+
+# Compiled Python files
+*.pyc
+
+# macOS
+.DS_Store
+
+# Compiled translations
+*.mo
+
+# Python virtual environment
+.pipenv/
+
+# Ignore pipenv's HTML output
+pipenv-debug.log
+
+# Ignore Python bytecode
+__pycache__/
+
+# Ignore environment file
+.env
