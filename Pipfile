@@ -7,6 +7,9 @@ name = "pypi"
 django = "*"
 djangorestframework = "*"
 requests = "*"
+celery = "*"
+install = "*"
+django-compression-middleware = "*"
 
 [dev-packages]
 
