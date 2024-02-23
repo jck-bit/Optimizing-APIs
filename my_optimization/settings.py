@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'api',
     'posts',
     'rest_framework',
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [
@@ -151,6 +152,10 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 5,
 }
 
-
-
-
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Basic': {
+            'type': 'basic'
+        }
+    }
+}

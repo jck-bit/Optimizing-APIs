@@ -2,6 +2,7 @@ from rest_framework import generics, status
 from rest_framework.views import APIView
 from .serializers import PostSerializer, Photoserializer
 from rest_framework.response import Response
+from django.db import connection
 import requests
 from .tasks import async_log
 import json
@@ -66,3 +67,9 @@ class NotCompressedPayload(APIView):
         return Response(data)
     
 
+class ConnectionPoolDemoView(APIView):
+    def get(self, request):
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT 1")
+            row = cursor.fetchone()
+            return Response(row)
