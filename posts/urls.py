@@ -3,5 +3,7 @@ from .import views
 
 urlpatterns = [
     path('', views.PostsListView.as_view(), name='post-list'),
-    path('/celery', views.PhotoListViewCelery.as_view(), name='post-list-celery'),
+    path('celery', views.PhotoListViewCelery.as_view(), name='post-list-celery'),
+    path('/compression', views.GzipCompressionView.as_view(), name='gzip-compression'),
+    path('/compression2', views.GzipCompressionView2.as_view(), name='gzip-compression2'),
 ]
