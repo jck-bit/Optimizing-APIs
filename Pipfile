@@ -12,6 +12,7 @@ django-compression-middleware = "*"
 django-db-connection-pool = "*"
 psycopg2-binary = "*"
 mysqlclient = "*"
+drf-yasg = "*"
 
 [dev-packages]
 
