@@ -80,13 +80,28 @@ WSGI_APPLICATION = 'my_optimization.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'dj_db_conn_pool.backends.mysql',  
+        'NAME': 'my_database',
+        'USER': 'my_user',
+        'PASSWORD': 'my_password',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'POOL': {
+            'max_overflow': 10,  # Maximum number of connections in overflow
+            'pool_size': 5,      # Maximum number of connections in the pool
+            'timeout': 30,       # Connection timeout in seconds
+            'recycle': 3600,     # Recycle connections after this many seconds
+        },
+    },
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

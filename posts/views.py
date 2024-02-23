@@ -8,7 +8,6 @@ import json
 import gzip
 from django.http import HttpResponse
 
-
 class PostsListView(generics.ListAPIView):
     serializer_class = PostSerializer
 
@@ -37,8 +36,6 @@ class PhotoListViewCelery(generics.ListAPIView):
         except Exception as e:
             raise RuntimeError(str(e))
         
-
-
 #after including the gzip middleware now we want to compresss the requests
 class GzipCompressionView(APIView):
     def get(self, request):
@@ -46,8 +43,6 @@ class GzipCompressionView(APIView):
         response.raise_for_status()
         data = response.json()
         
-       
-
         #serialize the data to json
         json_data = json.dumps(data).encode('utf-8')
 
@@ -62,10 +57,12 @@ class GzipCompressionView(APIView):
     
 #another route without compression
 
-class GzipCompressionView2(APIView):
+class NotCompressedPayload(APIView):
     def get(self, request):
         response = requests.get('https://jsonplaceholder.typicode.com/todos')
         response.raise_for_status()
         data = response.json()
 
         return Response(data)
+    
+

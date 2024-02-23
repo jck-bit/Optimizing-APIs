@@ -9,6 +9,9 @@ djangorestframework = "*"
 requests = "*"
 celery = "*"
 django-compression-middleware = "*"
+django-db-connection-pool = "*"
+psycopg2-binary = "*"
+mysqlclient = "*"
 
 [dev-packages]
 
